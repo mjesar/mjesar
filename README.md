@@ -50,7 +50,7 @@ Three open-source projects that cover the same ground from different sides: safe
 
 ## Shopify and e-commerce
 
-At MGLogics I worked on Shopify and BigCommerce apps for furniture and retail merchants, from architecture through App Store publishing and merchant support. Much of that work was keeping data in step across systems: products, inventory, and orders moving between supplier and retailer stores, Amazon, and the storefront, using the Admin APIs, webhooks, and Sidekiq jobs with retries.
+I worked on Shopify and BigCommerce apps for furniture and retail merchants, from architecture through App Store publishing and merchant support. Much of that work was keeping data in step across systems: products, inventory, and orders moving between supplier and retailer stores, Amazon, and the storefront, using the Admin APIs, webhooks, and Sidekiq jobs with retries.
 
 - **Shopify apps:** embedded apps with Polaris and App Bridge, Admin and Storefront REST and GraphQL APIs, webhooks, Shopify CLI, and App Store publishing and compliance
 - **Shopify Functions and checkout:** Functions (including Scripts-to-Functions migration for discounts, delivery, and payment customizations), Checkout UI Extensions, and Checkout Extensibility
@@ -101,10 +101,10 @@ Give it narrow tools, validate every argument, and require approval for anything
 Ask to see work on checkout extensions, Shopify Functions, and B2B features, and how they handle migration and testing. My Shopify Plus work is checkout customization with checkout extensions and B2B features, on top of five apps published on the Shopify App Store.
 
 **Can a Rails developer build Shopify apps and integrations?**
-Yes. Rails powered the apps I worked on at MGLogics, including order and inventory sync between supplier and retailer stores, Amazon SP-API listing imports, and JSON-LD structured data apps.
+Yes. Rails powered the apps I worked on, including order and inventory sync between supplier and retailer stores, Amazon SP-API listing imports, and JSON-LD structured data apps.
 
 **How do you keep inventory and orders in sync between Shopify and other systems?**
-Webhooks for changes, Sidekiq jobs with retries for the heavy work, and the Admin APIs for writes. Express Sync (supplier and retailer stores) and the Amazon Import & Sync System (Amazon listings) are examples of this kind of sync.
+Webhooks for changes, Sidekiq jobs with retries for the heavy work, and the Admin APIs for writes. Syncing products, inventory, and orders between supplier and retailer stores, and importing and syncing Amazon listings, are examples of this kind of sync.
 
 **Are you available for remote work?**
 Yes, for remote roles and freelance projects. Email is below.
