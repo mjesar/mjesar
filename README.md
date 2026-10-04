@@ -58,14 +58,14 @@ An AI agent that rates how discoverable a Shopify product is to AI shopping assi
 - **MGLogics** (Dec 2021 to Jun 2026, remote): Full-stack Ruby on Rails and React engineer for Shopify and BigCommerce apps. Contributed to five apps published on the Shopify App Store, plus catalog and order sync platforms and Amazon SP-API integrations. Improved performance with Redis caching, query optimization, and Sidekiq background jobs, and owned deployment, releases, and platform compliance across Heroku, AWS, and Google Cloud.
 - **SimpleDeploy** (Apr 2019 to Dec 2021): Backend software engineer building Ruby on Rails REST APIs on SQL and NoSQL databases and management MVP tools for clients in Germany.
 
-## Shopify apps I contributed to
+## Shopify and BigCommerce apps I contributed to
 
-Production apps on a Ruby on Rails and React stack, built as part of the MGLogics development team:
+Production apps on a Ruby on Rails and React stack, built as part of the MGLogics development team. Five are published on the Shopify App Store, and three of them are also available on BigCommerce:
 
-- [MGLogics JSON-LD SEO Schema](https://apps.shopify.com/json-express-for-seo): automated JSON-LD structured data for rich results and AI search. Rated 4.3/5 across 17 reviews.
-- [Express Sync: Order & Inventory](https://apps.shopify.com/express-sync): real-time sync of products, inventory, and orders between supplier and retailer stores, with price markup and currency conversion.
+- [MGLogics JSON-LD SEO Schema](https://apps.shopify.com/json-express-for-seo) (Shopify and BigCommerce): automated JSON-LD structured data for rich results and AI search. Rated 4.3/5 across 17 reviews.
+- **Express Sync: Order & Inventory** (Shopify and BigCommerce): real-time sync of products, inventory, and orders between supplier and retailer stores, with price markup and currency conversion.
 - [MGLogics Express SEO & Schema](https://apps.shopify.com/express-seo): image optimization, JSON-LD, alt tags, redirects, and schema management.
-- [GeoLocation Traffic Redirect](https://apps.shopify.com/express-geo-redirect): country-based redirects with pop-up and automatic options.
+- [GeoLocation Traffic Redirect](https://apps.shopify.com/express-geo-redirect) (Shopify and BigCommerce): country-based redirects with pop-up and automatic options.
 - [Email Validator by MGLogics](https://apps.shopify.com/express-email-validator): detects fake or invalid emails on orders to prevent order scams.
 
 ## Education
