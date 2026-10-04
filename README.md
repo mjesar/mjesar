@@ -4,7 +4,7 @@
 
 <p align="center">
   <b>Ruby on Rails Engineer · AI Agents, RAG & MCP · Shopify & E-commerce</b><br>
-  Lahore, Pakistan · Open to remote roles and freelance projects
+  Lahore, Pakistan · Experience with international clients · Open to remote roles and freelance projects
 </p>
 
 <p align="center">
