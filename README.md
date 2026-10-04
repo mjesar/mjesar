@@ -1,112 +1,87 @@
 <h1 align="center">
-  <img src="assets/readme/banner.svg" alt="Mohammad Ali Jesar, Ruby on Rails engineer for AI agents, RAG, MCP and Shopify" width="100%">
+  <img src="assets/readme/banner.svg" alt="Mohammad Ali Jesar, Ruby on Rails engineer building AI agents, MCP servers, RAG, and Shopify apps" width="100%">
 </h1>
 
 <p align="center">
-  <b>Ruby on Rails Engineer · AI Agents, RAG & MCP · Shopify, BigCommerce & E-commerce</b><br>
-  Lahore, Pakistan · Experience with international clients · Open to remote roles and freelance projects
+  <b>Ruby on Rails · AI Agents · MCP · RAG · Shopify & BigCommerce</b><br>
+  Full-stack engineer · Lahore, Pakistan · Open to remote roles and freelance projects
 </p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/mjesar/"><img src="https://img.shields.io/badge/LinkedIn-mjesar-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn profile of Mohammad Ali Jesar"></a>
   <a href="https://www.fiverr.com/mjesar"><img src="https://img.shields.io/badge/Fiverr-mjesar-1DBF73?logo=fiverr&logoColor=white" alt="Fiverr profile for Ruby on Rails freelance work"></a>
-  <a href="mailto:mohammadalijaisar@gmail.com"><img src="https://img.shields.io/badge/Open%20to-remote%20work-informational" alt="Open to remote work, email Mohammad Ali Jesar"></a>
+  <a href="mailto:mohammadalijaisar@gmail.com"><img src="https://img.shields.io/badge/Email-open%20to%20work-informational" alt="Email Mohammad Ali Jesar, open to work"></a>
 </p>
 
-AI assistants can only recommend what they can read. Most online stores were built for human visitors, so their data is hard for ChatGPT, Gemini, or Perplexity to find and trust, and most Rails apps have no safe way to let an LLM work with their real data.
+**Mohammad Ali Jesar (Ali)** is a full-stack Ruby on Rails engineer from Lahore, Pakistan with 7+ years of experience. Ali builds AI agents, Model Context Protocol (MCP) servers, and RAG systems, and develops Shopify and BigCommerce apps, with a focus on agentic commerce and GEO/AEO. Open to remote roles and freelance projects.
 
-I'm Mohammad Ali Jesar (Ali), a Ruby on Rails engineer with 7+ years of experience building production software for international clients. I build AI into Rails applications through MCP servers, RAG, and AI agents that work with real application data, and I contributed to five production apps published on the Shopify App Store, three of them also available on BigCommerce. My background is Rails performance work (Redis caching, query optimization, Sidekiq), which I now combine with LLM integrations and agentic commerce.
+## What I build
 
-## What I work on
-
-- **AI in Rails apps:** MCP (Model Context Protocol) servers, RAG (Retrieval-Augmented Generation) with PostgreSQL + pgvector, AI agents with tool calling and evals, LLM integrations with Claude, OpenAI, Gemini, and RubyLLM
-- **Shopify and e-commerce:** custom Shopify apps (embedded apps with Polaris and App Bridge), Shopify Functions (including Scripts-to-Functions migration), Checkout UI Extensions, Theme App Extensions, Admin and Storefront REST and GraphQL APIs, webhooks, Shopify CLI, App Store publishing and compliance, BigCommerce apps, Amazon SP-API
-- **BigCommerce:** BigCommerce app development, Catalog, Orders, and Checkout APIs (REST and GraphQL), webhooks, and App Store publishing
-- **Agentic commerce and GEO/AEO:** making online stores discoverable and shoppable by AI shopping assistants such as ChatGPT, Gemini, and Perplexity, using JSON-LD structured data, Shopify Catalog and UCP (Universal Commerce Protocol) APIs, and MCP
-- **Rails backends and frontends:** Hotwire (Turbo, Stimulus), React bundled in Rails with esbuild, PostgreSQL, MongoDB, Redis, Sidekiq, REST and GraphQL APIs, RSpec
-- **Performance and deployment:** Redis caching, N+1 and query optimization, database indexing, background job design, and deployment on Heroku, AWS, Google Cloud, and Docker
+- **AI agents and MCP servers in Rails:** MCP (Model Context Protocol) servers, agents with tool calling and evals, LLM integrations with Claude, Gemini, and RubyLLM
+- **RAG:** Retrieval-Augmented Generation with PostgreSQL and pgvector, semantic product search, grounded answers
+- **Shopify and BigCommerce apps:** custom apps, Shopify Functions, Checkout UI Extensions, Theme App Extensions, Admin and Storefront REST and GraphQL APIs, webhooks, App Store publishing
+- **Agentic commerce, GEO and AEO:** making stores discoverable and shoppable by AI assistants such as ChatGPT, Gemini, and Perplexity, using JSON-LD structured data, Shopify Catalog and UCP (Universal Commerce Protocol) APIs, and MCP
+- **Rails performance:** Sidekiq, Redis caching, N+1 fixes, indexing, and releases on Heroku, AWS, and Google Cloud
+- **Frontend:** Hotwire (Turbo, Stimulus), React bundled in Rails with esbuild
 
 ## Featured projects
 
-These three projects cover the same problem from different sides: giving an LLM safe access to store data, letting a shopper talk to a real catalog, and measuring how visible a product is to AI assistants.
+Three projects that attack the same problem from different angles: safe LLM access to store data, conversational catalog search, and measuring AI discoverability.
 
 <p align="center">
   <img src="assets/readme/projects-flow.svg" alt="shop_mcp_server exposes a store to Claude over MCP, ai_shop_assistant searches Shopify's live Catalog API, and product_geo_agent scores how discoverable a product is to AI shopping assistants" width="100%">
 </p>
 
-<details>
-<summary>Text version of the diagram</summary>
-
-- shop_mcp_server: exposes a store's products, orders, and inventory to Claude through MCP tools and RAG search.
-- ai_shop_assistant: chats with shoppers and searches Shopify's live Catalog API through MCP.
-- product_geo_agent: scores how discoverable a Shopify product is to AI shopping assistants (GEO/AEO).
-
-</details>
-
-### [shop_mcp_server](https://github.com/mjesar/shop_mcp_server)
-An MCP server in Ruby on Rails that connects Claude to a store's products, orders, and inventory. Schema-validated tools, approval-gated write actions (read-only and destructive annotations), transactional order creation with rollback, RAG semantic product search with Voyage AI embeddings and pgvector, and an RSpec test suite. Verified at three layers: Rails console, MCP Inspector, and a live Claude custom connector. Along the way I diagnosed a legacy SSE vs. Streamable HTTP transport mismatch and moved to the official MCP Ruby SDK.
-`Rails 8.1` `MCP Ruby SDK` `PostgreSQL` `pgvector` `Voyage AI` `RSpec`
-
-### [ai_shop_assistant](https://github.com/mjesar/ai_shop_assistant)
-An AI shopping assistant that searches Shopify's live Catalog API through MCP and answers product questions conversationally, with realtime replies over Turbo Streams and background jobs on Solid Queue. It uses a hand-written HTTP/JSON-RPC MCP client, because the existing gem failed on the protocol handshake.
-`Rails 8` `RubyLLM` `Google Gemini` `Hotwire` `MongoDB`
-
-### [product_geo_agent](https://github.com/mjesar/product_geo_agent)
-An AI agent that rates how discoverable a Shopify product is to AI shopping assistants (GEO/AEO). It checks product data, FAQ content, and schema.org structured data, asks an LLM whether it would recommend the product, and produces a deterministic score backed by an eval harness.
-`Rails` `AI agents` `Google Gemini` `Shopify Storefront API` `GEO/AEO`
+| Project | What it does |
+|---|---|
+| [shop_mcp_server](https://github.com/mjesar/shop_mcp_server) | Rails MCP server that exposes store products, orders, and inventory to Claude. Schema-validated tools, read-only and destructive annotations, RAG with pgvector, verified as a live Claude custom connector. |
+| [ai_shop_assistant](https://github.com/mjesar/ai_shop_assistant) | LLM shopping assistant that searches Shopify's live Catalog API over MCP. Realtime replies with Turbo Streams, Solid Queue, and a hand-written JSON-RPC MCP client. |
+| [product_geo_agent](https://github.com/mjesar/product_geo_agent) | AI agent that scores how discoverable a Shopify product is for GEO/AEO (schema, FAQ, product data). Deterministic scoring backed by an eval harness. |
 
 ## How I can help
 
-- **Add AI to a Rails app:** build an MCP server so Claude or another LLM can work with your real data safely, add RAG semantic search with PostgreSQL and pgvector, or build an AI agent with tool calling.
-- **Make a store visible to AI assistants:** structured data (JSON-LD), clean product data, and agent-ready catalogs so shopping assistants can find and recommend products.
-- **Build or fix a Shopify or BigCommerce app:** custom apps, checkout customizations, Shopify Functions, catalog and order sync, and App Store publishing.
-- **Connect marketplaces:** Amazon SP-API integrations for listings, variants, and images, and product, inventory, and order sync between stores.
-- **Speed up a Rails app:** Redis caching, N+1 fixes, indexing, and reliable Sidekiq background jobs.
-
-Also built: an Amazon Import & Sync System (Rails and Amazon SP-API) that imports and synchronizes product listings, variants, and images between Amazon and e-commerce stores.
+- Add an **MCP server** or **AI agent** to a Rails app so Claude or Gemini can use real data safely
+- Improve **GEO and AEO** for a store: structured data, clean product feeds, agent-ready catalogs
+- Build or fix **Shopify and BigCommerce apps**: Functions, checkout extensions, catalog and order sync, App Store publishing
+- Connect **Amazon SP-API** and other marketplaces
+- Speed up Rails apps: Sidekiq, caching, query optimization
 
 ## Experience
 
-- **MGLogics** (Dec 2021 to Jun 2026, remote): Full-stack Ruby on Rails and React engineer for Shopify and BigCommerce apps. Contributed to five apps published on the Shopify App Store, plus catalog and order sync platforms and Amazon SP-API integrations. Improved performance with Redis caching, query optimization, and Sidekiq background jobs, and owned deployment, releases, and platform compliance across Heroku, AWS, and Google Cloud.
-- **SimpleDeploy** (Apr 2019 to Dec 2021): Backend software engineer building Ruby on Rails REST APIs on SQL and NoSQL databases and management MVP tools for clients in Germany.
+- **MGLogics** (Dec 2021 to Jun 2026, remote): Full-stack Rails and React. Contributed to five Shopify App Store apps (three also on BigCommerce), catalog and order sync, Amazon SP-API integrations, Sidekiq and Redis performance work, and releases on Heroku, AWS, and Google Cloud. Worked daily with US clients.
+- **SimpleDeploy** (Apr 2019 to Dec 2021): Rails REST APIs and management MVP tools for German clients.
+- **Education:** B.S. in Information Technology (Software), Sindh Agricultural University, 2012 to 2017. Python AI Bootcamp, Axiom Enterprises, 2018.
 
-## Shopify and BigCommerce apps I contributed to
+## Published Shopify and BigCommerce apps
 
-Production apps on a Ruby on Rails and React stack, built as part of the MGLogics development team. Five are published on the Shopify App Store, and three of them are also available on BigCommerce:
+Built as part of the MGLogics development team:
 
-- [MGLogics JSON-LD SEO Schema](https://apps.shopify.com/json-express-for-seo) (Shopify and BigCommerce): automated JSON-LD structured data for rich results and AI search. Rated 4.3/5 across 17 reviews.
-- **Express Sync: Order & Inventory** (Shopify and BigCommerce): real-time sync of products, inventory, and orders between supplier and retailer stores, with price markup and currency conversion.
-- [MGLogics Express SEO & Schema](https://apps.shopify.com/express-seo): image optimization, JSON-LD, alt tags, redirects, and schema management.
-- [GeoLocation Traffic Redirect](https://apps.shopify.com/express-geo-redirect) (Shopify and BigCommerce): country-based redirects with pop-up and automatic options.
-- [Email Validator by MGLogics](https://apps.shopify.com/express-email-validator): detects fake or invalid emails on orders to prevent order scams.
-
-## Education
-
-- B.S. in Information Technology (Software), Sindh Agricultural University, 2012 to 2017
-- Python AI Bootcamp, Axiom Enterprises, 2018 (Flask and TensorFlow/Keras web apps with machine learning models)
+- [MGLogics JSON-LD SEO Schema](https://apps.shopify.com/json-express-for-seo) (Shopify and BigCommerce): structured data for rich results and AI search. Rated 4.3/5 across 17 reviews.
+- **Express Sync: Order & Inventory** (Shopify and BigCommerce): real-time product, inventory, and order sync between supplier and retailer stores.
+- [MGLogics Express SEO & Schema](https://apps.shopify.com/express-seo): image optimization, JSON-LD, redirects, and schema management.
+- [GeoLocation Traffic Redirect](https://apps.shopify.com/express-geo-redirect) (Shopify and BigCommerce): country-based redirects.
+- [Email Validator by MGLogics](https://apps.shopify.com/express-email-validator): detects fake or invalid emails on orders.
 
 ## FAQ
 
 **Who is Mohammad Ali Jesar?**
-A Ruby on Rails engineer from Lahore, Pakistan with 7+ years of experience, specializing in Shopify and e-commerce apps and, more recently, AI agents, RAG, and MCP servers.
+A full-stack Ruby on Rails engineer from Lahore, Pakistan with 7+ years of experience in Shopify and BigCommerce apps, AI agents, RAG, and MCP servers.
 
 **Does Ali build MCP servers in Ruby on Rails?**
-Yes. [shop_mcp_server](https://github.com/mjesar/shop_mcp_server) is a Rails MCP server that connects Claude to a store's products, orders, and inventory, verified as a live Claude custom connector.
+Yes. [shop_mcp_server](https://github.com/mjesar/shop_mcp_server) is a Rails MCP server connected to Claude, with schema-validated tools, RAG, and approval-gated write actions.
 
-**Does Ali build BigCommerce apps?**
-Yes. Ali has built and published BigCommerce apps with Ruby on Rails and React, working with the BigCommerce Catalog, Orders, and Checkout APIs and webhooks. Three apps are available on both Shopify and BigCommerce.
+**Does Ali build AI agents for Shopify?**
+Yes. See [product_geo_agent](https://github.com/mjesar/product_geo_agent) for GEO/AEO scoring and [ai_shop_assistant](https://github.com/mjesar/ai_shop_assistant) for Catalog API search over MCP.
 
-**Does Ali have Shopify app experience?**
-Yes. Ali contributed to five production apps published on the Shopify App Store, three of them also on BigCommerce, and works with Shopify Functions, checkout extensions, and the Admin and Storefront APIs.
+**Has Ali worked on Shopify App Store apps?**
+Yes. Ali contributed to five production apps on the Shopify App Store, three of them also available on BigCommerce.
 
 **Has Ali worked with international clients?**
-Yes, for over 7 years, including clients in Germany.
+Yes, with US clients at MGLogics and German clients at SimpleDeploy.
 
 **Is Ali available for remote work or freelance projects?**
-Yes. Ali is open to remote roles and freelance projects. See the contact links below.
+Yes. Reach out through the LinkedIn, Fiverr, or email links at the top of this page.
 
 ## Contact
 
-- LinkedIn: [linkedin.com/in/mjesar](https://www.linkedin.com/in/mjesar/)
-- Fiverr: [fiverr.com/mjesar](https://www.fiverr.com/mjesar)
-- Email: mohammadalijaisar@gmail.com
+Email: mohammadalijaisar@gmail.com
