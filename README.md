@@ -10,7 +10,6 @@
 <p align="center">
   <a href="https://www.linkedin.com/in/mjesar/"><img src="https://img.shields.io/badge/LinkedIn-mjesar-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn profile of Mohammad Ali Jesar"></a>
   <a href="https://www.fiverr.com/mjesar"><img src="https://img.shields.io/badge/Fiverr-mjesar-1DBF73?logo=fiverr&logoColor=white" alt="Fiverr profile for Ruby on Rails freelance work"></a>
-  <img src="https://img.shields.io/badge/Shopify%20App%20Store-5%20apps-7AB55C?logo=shopify&logoColor=white" alt="Contributed to five apps published on the Shopify App Store">
   <img src="https://img.shields.io/badge/Open%20to-remote%20work-informational" alt="Open to remote work">
 </p>
 
