@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="220" viewBox="0 0 1000 220" role="img" aria-labelledby="t d">
+  <title id="t">How shop_mcp_server, ai_shop_assistant and product_geo_agent fit together</title>
+  <desc id="d">Three project cards. shop_mcp_server exposes a store to Claude over MCP. ai_shop_assistant searches Shopify's live Catalog API over MCP. product_geo_agent scores how discoverable a product is to AI shopping assistants.</desc>
+  <rect width="1000" height="220" rx="14" fill="#0d1117"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="30" y="30" width="290" height="160" rx="12" fill="#161b22" stroke="#30363d"/>
+    <text x="50" y="68" font-size="22" font-weight="700" fill="#f0f6fc">shop_mcp_server</text>
+    <text x="50" y="102" font-size="16" fill="#9ea7b3">Exposes a store to Claude</text>
+    <text x="50" y="126" font-size="16" fill="#9ea7b3">through MCP tools and RAG</text>
+    <text x="50" y="164" font-size="14" fill="#f5a524">Rails · pgvector · RSpec</text>
+
+    <rect x="355" y="30" width="290" height="160" rx="12" fill="#161b22" stroke="#30363d"/>
+    <text x="375" y="68" font-size="22" font-weight="700" fill="#f0f6fc">ai_shop_assistant</text>
+    <text x="375" y="102" font-size="16" fill="#9ea7b3">Chats with shoppers using</text>
+    <text x="375" y="126" font-size="16" fill="#9ea7b3">Shopify's live Catalog API</text>
+    <text x="375" y="164" font-size="14" fill="#f5a524">RubyLLM · Gemini · Hotwire</text>
+
+    <rect x="680" y="30" width="290" height="160" rx="12" fill="#161b22" stroke="#30363d"/>
+    <text x="700" y="68" font-size="22" font-weight="700" fill="#f0f6fc">product_geo_agent</text>
+    <text x="700" y="102" font-size="16" fill="#9ea7b3">Scores how discoverable a</text>
+    <text x="700" y="126" font-size="16" fill="#9ea7b3">product is to AI assistants</text>
+    <text x="700" y="164" font-size="14" fill="#f5a524">AI agent · Gemini · GEO/AEO</text>
+  </g>
+</svg>
