@@ -10,7 +10,7 @@
 <p align="center">
   <a href="https://www.linkedin.com/in/mjesar/"><img src="https://img.shields.io/badge/LinkedIn-mjesar-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn profile of Mohammad Ali Jesar"></a>
   <a href="https://www.fiverr.com/mjesar"><img src="https://img.shields.io/badge/Fiverr-mjesar-1DBF73?logo=fiverr&logoColor=white" alt="Fiverr profile for Ruby on Rails freelance work"></a>
-  <img src="https://img.shields.io/badge/Open%20to-remote%20work-informational" alt="Open to remote work">
+  <a href="mailto:mohammadalijaisar@gmail.com"><img src="https://img.shields.io/badge/Open%20to-remote%20work-informational" alt="Open to remote work, email Mohammad Ali Jesar"></a>
 </p>
 
 AI assistants can only recommend what they can read. Most online stores were built for human visitors, so their data is hard for ChatGPT, Gemini, or Perplexity to find and trust, and most Rails apps have no safe way to let an LLM work with their real data.
