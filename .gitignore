@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*~
+
+# Claude Code local files
+.claude/
+
+# graphify output
+graphify-out/
+
+# Scratch and screen recordings (large media is linked, not committed)
+*.mp4
+*.mov
