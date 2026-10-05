@@ -85,29 +85,29 @@ My AI work is application engineering: connecting models to the data and actions
 
 ## FAQ
 
-**How do I add AI features to an existing Rails app?**
-Start with what the model needs: your data and a few safe actions. In my projects that meant RubyLLM for the model calls, MCP tools for actions, pgvector for search, and background jobs for slow work, so the AI fits into the app you already have. [ai_shop_assistant](https://github.com/mjesar/ai_shop_assistant) is a small working example.
+**Can Ruby on Rails applications be connected to AI agents?**
+Yes. Give the agent a small set of narrow tools backed by your existing Rails code, validate every argument, and require approval for anything that writes. Keep decisions that must be repeatable in code, not in the model. [ai_shop_assistant](https://github.com/mjesar/ai_shop_assistant) uses RubyLLM and Gemini with tool calling against a live catalog, and in [product_geo_agent](https://github.com/mjesar/product_geo_agent) the LLM judges while the score stays deterministic.
 
-**Can RAG be added to a Rails app that already uses PostgreSQL?**
-Yes. pgvector adds vector search to PostgreSQL, so there is no separate vector database to run. [shop_mcp_server](https://github.com/mjesar/shop_mcp_server) stores Voyage AI embeddings in pgvector for product search.
+**How can RAG be added to an existing Rails application?**
+If the app already uses PostgreSQL, add pgvector for vector search, so there is no separate vector database to run. Generate embeddings, store them next to your records, and query by similarity. [shop_mcp_server](https://github.com/mjesar/shop_mcp_server) stores Voyage AI embeddings in pgvector for semantic product search.
 
-**What is involved in building a custom MCP server in Rails?**
-Defining tools with validated arguments, marking which are read-only and which are destructive so clients gate writes behind approval, choosing the right transport, and testing from a real client. In shop_mcp_server I moved to the official MCP Ruby SDK after hitting an SSE vs. Streamable HTTP mismatch, and verified it in MCP Inspector and as a live Claude custom connector.
+**How do you build an MCP server for a Rails application?**
+Define tools with validated arguments, mark which are read-only and which are destructive so clients gate writes behind approval, choose the right transport, and test from a real client. In shop_mcp_server I moved to the official MCP Ruby SDK after hitting an SSE vs. Streamable HTTP mismatch, and verified it in MCP Inspector and as a live Claude custom connector.
 
-**How can an AI agent safely connect to store data and tools?**
-Give it narrow tools, validate every argument, and require approval for anything that writes. Keep decisions that must be repeatable in code, not in the model. [product_geo_agent](https://github.com/mjesar/product_geo_agent) does this: the LLM judges, and the score is deterministic.
+**Can you build custom Shopify apps with Ruby on Rails?**
+Yes. Rails powered the Shopify apps I worked on: embedded apps with Polaris and App Bridge, the Admin and Storefront APIs, webhooks, and App Store publishing. Examples include order and inventory sync between supplier and retailer stores and JSON-LD structured data apps.
 
-**What should I look for in a Shopify Plus developer?**
-Ask to see work on checkout extensions, Shopify Functions, and B2B features, and how they handle migration and testing. My Shopify Plus work is checkout customization with checkout extensions and B2B features, on top of five apps published on the Shopify App Store.
+**Can you build Shopify Plus integrations and checkout customizations?**
+Yes. My Shopify Plus work is checkout customization with Shopify checkout extensions and B2B features, plus Shopify Functions (including Scripts-to-Functions migration for discounts, delivery, and payment customizations).
 
-**Can a Rails developer build Shopify apps and integrations?**
-Yes. Rails powered the apps I worked on, including order and inventory sync between supplier and retailer stores, Amazon SP-API listing imports, and JSON-LD structured data apps.
+**Can Shopify stores be connected to external APIs and systems?**
+Yes. I use webhooks for changes, Sidekiq jobs with retries for the heavy work, and the Admin APIs for writes. That covers syncing products, inventory, and orders between supplier and retailer stores, and importing and syncing Amazon listings through SP-API.
 
-**How do you keep inventory and orders in sync between Shopify and other systems?**
-Webhooks for changes, Sidekiq jobs with retries for the heavy work, and the Admin APIs for writes. Syncing products, inventory, and orders between supplier and retailer stores, and importing and syncing Amazon listings, are examples of this kind of sync.
+**How can AI be added to an e-commerce application?**
+Connect the model to the data and actions the store already has: an MCP server for products, orders, and inventory, semantic search with pgvector, and an assistant that answers from the live catalog instead of the model's memory. Writes stay behind approval, and repeatable logic stays in code.
 
-**Are you available for remote work?**
-Yes, for remote roles and freelance projects. Email is below.
+**How can an online store become discoverable to AI shopping assistants?**
+Make product pages easy for an AI to read and trust: complete product data, clear FAQ content, and schema.org structured data (JSON-LD). [product_geo_agent](https://github.com/mjesar/product_geo_agent) checks these and scores how discoverable a Shopify product is.
 
 ## Contact
 
