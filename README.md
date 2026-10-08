@@ -48,6 +48,16 @@ Three open-source projects that cover the same ground from different sides: safe
 **What I built:** checks of product data, FAQ content, and schema.org structured data, an LLM step that judges whether it would recommend the product, and a deterministic score backed by an eval harness.
 **Stack:** Rails, Google Gemini, Shopify Storefront API.
 
+## Open-source contributions
+
+While building product_geo_agent on the [little_ghost](https://github.com/littleghostai/little_ghost) Ruby agent gem with Gemini, I hit three bugs in the gem itself. I reproduced each one, reported it, and sent a fix. All three were merged upstream in October 2026.
+
+- **[Replay Gemini thought signatures across multi-turn tool calls](https://github.com/littleghostai/little_ghost/pull/112):** Gemini expects its thought signatures back on later turns of a tool-calling conversation, and the gem did not send them. Signatures are now replayed per message, and they survive serialized history and restored sessions.
+- **[Send the original function name in functionResponse.name](https://github.com/littleghostai/little_ghost/pull/113):** tool results went back to Gemini without the original function name. The name is now looked up from the matching tool call by ID, so parallel calls and restored sessions work.
+- **[Preserve Agent lifecycle hooks when building execution snapshots](https://github.com/littleghostai/little_ghost/pull/115):** hooks such as `before_model` and `after_tool` on an `Agent` subclass were silently skipped, with no error and a normal-looking response. The cause was a regex that matched `_value` attributes but not the plural `_values` that stores the hooks. I reproduced it first, widened the match, and added a test that fails without the fix.
+
+These are bug fixes in a library I use, not a full contribution history.
+
 ## Shopify and e-commerce
 
 I worked on Shopify and BigCommerce apps for furniture and retail merchants, from architecture through App Store publishing and merchant support. Much of that work was keeping data in step across systems: products, inventory, and orders moving between supplier and retailer stores, Amazon, and the storefront, using the Admin APIs, webhooks, and Sidekiq jobs with retries.
@@ -74,7 +84,7 @@ My AI work is application engineering: connecting models to the data and actions
 
 - **MCP:** shop_mcp_server exposes tools and resources with validated arguments and approval-gated writes. ai_shop_assistant uses a custom MCP client against Shopify's Catalog API.
 - **RAG on the database you already have:** semantic product search with PostgreSQL, pgvector, and Voyage AI embeddings, with no separate vector database.
-- **Agents and assistants:** ai_shop_assistant uses RubyLLM and Gemini with tool calling against a live catalog. In product_geo_agent, the LLM judges and the scoring stays deterministic code, so results are repeatable and covered by evals.
+- **Agents and assistants:** ai_shop_assistant uses RubyLLM and Gemini with tool calling against a live catalog. In product_geo_agent, the LLM judges and the scoring stays deterministic code, so results are repeatable and covered by evals. I also fixed Gemini tool-calling and agent-hook bugs in the little_ghost gem (see Open-source contributions).
 - **GEO and AEO:** product_geo_agent, plus JSON-LD structured data in the SEO apps, for making stores readable to AI assistants.
 
 ## Experience
