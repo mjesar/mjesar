@@ -9,6 +9,7 @@
 
 <p align="center">
   <a href="https://mjesar.github.io/"><img src="https://img.shields.io/badge/Website-mjesar.github.io-F68C50" alt="Website of Mohammad Ali Jesar"></a>
+  <a href="https://gitlab.com/mjesar"><img src="https://img.shields.io/badge/GitLab-mjesar-FC6D26?logo=gitlab&logoColor=white" alt="GitLab profile of Mohammad Ali Jesar"></a>
   <a href="https://www.linkedin.com/in/mjesar/"><img src="https://img.shields.io/badge/LinkedIn-mjesar-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn profile of Mohammad Ali Jesar"></a>
   <a href="https://www.fiverr.com/mjesar"><img src="https://img.shields.io/badge/Fiverr-mjesar-1DBF73?logo=fiverr&logoColor=white" alt="Fiverr profile of Mohammad Ali Jesar"></a>
   <a href="mailto:mohammadalijaisar@gmail.com"><img src="https://img.shields.io/badge/Email-mohammadalijaisar%40gmail.com-informational" alt="Email Mohammad Ali Jesar"></a>
