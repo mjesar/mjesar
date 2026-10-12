@@ -1,124 +1,36 @@
 <h1 align="center">
-  <img src="assets/readme/banner.svg" alt="Mohammad Ali Jesar, senior Ruby on Rails engineer for Shopify and e-commerce, AI agents, RAG and MCP" width="100%">
+  <img src="assets/readme/banner.svg" alt="Mohammad Ali Jesar, senior Ruby on Rails engineer specializing in AI integration, with Shopify and e-commerce experience" width="100%">
 </h1>
 
 <p align="center">
-  <b>Senior Ruby on Rails Engineer · Shopify & E-commerce · AI Agents, RAG & MCP</b><br>
-  Full-stack · Lahore, Pakistan · Open to remote roles and freelance projects
+  <b>Senior Ruby on Rails Engineer specializing in AI integration</b><br>
+  Lahore, Pakistan · Available now for remote full-time roles, contracts and projects
 </p>
 
 <p align="center">
+  <a href="https://mjesar.github.io/"><img src="https://img.shields.io/badge/Website-mjesar.github.io-F68C50" alt="Website of Mohammad Ali Jesar"></a>
   <a href="https://www.linkedin.com/in/mjesar/"><img src="https://img.shields.io/badge/LinkedIn-mjesar-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn profile of Mohammad Ali Jesar"></a>
-  <a href="https://www.fiverr.com/mjesar"><img src="https://img.shields.io/badge/Fiverr-mjesar-1DBF73?logo=fiverr&logoColor=white" alt="Fiverr profile for Ruby on Rails freelance work"></a>
-  <a href="mailto:mohammadalijaisar@gmail.com"><img src="https://img.shields.io/badge/Email-open%20to%20work-informational" alt="Email Mohammad Ali Jesar, open to work"></a>
+  <a href="https://www.fiverr.com/mjesar"><img src="https://img.shields.io/badge/Fiverr-mjesar-1DBF73?logo=fiverr&logoColor=white" alt="Fiverr profile of Mohammad Ali Jesar"></a>
+  <a href="mailto:mohammadalijaisar@gmail.com"><img src="https://img.shields.io/badge/Email-mohammadalijaisar%40gmail.com-informational" alt="Email Mohammad Ali Jesar"></a>
 </p>
 
-I'm Mohammad Ali Jesar (Ali), a senior Ruby on Rails engineer with 7+ years of experience building production software for international clients. I build Rails APIs and integrations, and most of my work is in Shopify and e-commerce: I contributed to five apps on the Shopify App Store (three also on BigCommerce) and built catalog, order, and marketplace integrations. I also add AI to existing Rails applications, including MCP servers, RAG on PostgreSQL, and agents that work with real application data and tools.
-
-## What I work on
-
-- **Ruby on Rails:** APIs, PostgreSQL, Redis, Sidekiq, performance work, and React or Hotwire frontends, with JavaScript and TypeScript. Deployments on Heroku, AWS, Google Cloud, and Docker.
-- **Shopify and e-commerce:** Shopify and Shopify Plus (checkout customization, B2B features), BigCommerce apps, Shopify Functions, extensions, and Liquid
-- **Integrations:** REST and GraphQL APIs, webhooks, and syncing products, inventory, and orders between systems, including Amazon SP-API
-- **AI engineering:** MCP servers, RAG, AI agents, and LLM assistants connected to application data
+I am Mohammad Ali Jesar (mjesar). I build and extend production Ruby on Rails applications, integrate AI into existing products, and develop software for Shopify and other e-commerce platforms. 7+ years of experience, 4+ of them in Shopify and e-commerce.
 
 ## Featured projects
 
-Three open-source projects that cover the same ground from different sides: safe LLM access to store data, conversational catalog search, and measuring how visible a product is to AI assistants.
+Each project has a full case study on my website: the problem, what I built, what I verified and what broke.
 
-<p align="center">
-  <img src="assets/readme/projects-flow.svg" alt="shop_mcp_server exposes a store to Claude over MCP, ai_shop_assistant searches Shopify's live Catalog API, and product_geo_agent scores how discoverable a product is to AI shopping assistants" width="100%">
-</p>
+- **[shop_mcp_server](https://mjesar.github.io/projects/shop_mcp_server/)** ([code](https://github.com/mjesar/shop_mcp_server)): an MCP server in Rails that gives Claude real access to a store's products, orders and inventory, with semantic search on pgvector.
+- **[ai_shop_assistant](https://mjesar.github.io/projects/ai_shop_assistant/)** ([code](https://github.com/mjesar/ai_shop_assistant)): a Rails shopping chat where the AI searches Shopify's live catalog over MCP instead of making products up.
+- **[product_geo_agent](https://mjesar.github.io/projects/product_geo_agent/)** ([code](https://github.com/mjesar/product_geo_agent)): an AI agent that scores how discoverable a Shopify product is to AI shopping assistants, with evals and tracing.
+- **[support_engineer](https://mjesar.github.io/projects/support_engineer/)** ([code](https://github.com/mjesar/support_engineer)): a Rails support agent, in progress, that looks up real order data with tools and asks a human before risky actions.
 
-### [shop_mcp_server](https://github.com/mjesar/shop_mcp_server)
-**What it does:** an MCP server in Rails that exposes a store's products, orders, and inventory to Claude.
-**Problem:** an LLM needs access to real store data, and write actions should not run without a human approving them.
-**What I built:** schema-validated tools, read-only and destructive annotations so clients gate writes behind approval, transactional order creation with rollback, and semantic product search with Voyage AI embeddings and pgvector. I verified it in the Rails console, MCP Inspector, and as a live Claude custom connector, and moved to the official MCP Ruby SDK after finding a legacy SSE vs. Streamable HTTP transport mismatch.
-**Stack:** Rails 8.1, MCP Ruby SDK, PostgreSQL, pgvector, Voyage AI, RSpec.
+**Open source:** three merged pull requests in the [little_ghost](https://github.com/littleghostai/little_ghost) Ruby agent framework, fixing Gemini tool-calling and agent-hook bugs I found while building product_geo_agent ([#112](https://github.com/littleghostai/little_ghost/pull/112), [#113](https://github.com/littleghostai/little_ghost/pull/113), [#115](https://github.com/littleghostai/little_ghost/pull/115)).
 
-### [ai_shop_assistant](https://github.com/mjesar/ai_shop_assistant)
-**What it does:** a shopping assistant that answers product questions from Shopify's live Catalog API over MCP.
-**Problem:** answers should come from the real catalog, not from the model's memory.
-**What I built:** the chat UI with realtime replies over Turbo Streams, background jobs on Solid Queue, and a hand-written HTTP/JSON-RPC MCP client, because the existing gem failed on the protocol handshake.
-**Stack:** Rails 8, RubyLLM, Google Gemini, Hotwire, MongoDB.
+## What I do
 
-### [product_geo_agent](https://github.com/mjesar/product_geo_agent)
-**What it does:** an agent that rates how discoverable a Shopify product is to AI shopping assistants (GEO and AEO).
-**Problem:** a product page can look fine to a person and still be hard for an AI assistant to read and trust.
-**What I built:** checks of product data, FAQ content, and schema.org structured data, an LLM step that judges whether it would recommend the product, and a deterministic score backed by an eval harness.
-**Stack:** Rails, Google Gemini, Shopify Storefront API.
+- **[Ruby on Rails development](https://mjesar.github.io/services/rails-development/):** new apps, APIs and MVPs, and features, fixes and performance work in Rails apps already in production.
+- **[AI engineering in Rails](https://mjesar.github.io/services/ai-in-rails/):** AI assistants grounded in real data, agents with validated tools, MCP servers, RAG with pgvector, evals, and workflow automation with n8n.
+- **[Shopify and e-commerce](https://mjesar.github.io/services/shopify-development/):** custom Shopify and BigCommerce apps, checkout and Shopify Functions, Shopify Plus B2B, and product, inventory and order sync. I contributed to five apps on the Shopify App Store.
 
-## Open-source contributions
-
-While building product_geo_agent on the [little_ghost](https://github.com/littleghostai/little_ghost) Ruby agent gem with Gemini, I hit three bugs in the gem itself. I reproduced each one, reported it, and sent a fix. All three were merged upstream in October 2026.
-
-- **[Replay Gemini thought signatures across multi-turn tool calls](https://github.com/littleghostai/little_ghost/pull/112):** Gemini expects its thought signatures back on later turns of a tool-calling conversation, and the gem did not send them. Signatures are now replayed per message, and they survive serialized history and restored sessions.
-- **[Send the original function name in functionResponse.name](https://github.com/littleghostai/little_ghost/pull/113):** tool results went back to Gemini without the original function name. The name is now looked up from the matching tool call by ID, so parallel calls and restored sessions work.
-- **[Preserve Agent lifecycle hooks when building execution snapshots](https://github.com/littleghostai/little_ghost/pull/115):** hooks such as `before_model` and `after_tool` on an `Agent` subclass were silently skipped, with no error and a normal-looking response. The cause was a regex that matched `_value` attributes but not the plural `_values` that stores the hooks. I reproduced it first, widened the match, and added a test that fails without the fix.
-
-These are bug fixes in a library I use, not a full contribution history.
-
-## Shopify and e-commerce
-
-I worked on Shopify and BigCommerce apps for furniture and retail merchants, from architecture through App Store publishing and merchant support. Much of that work was keeping data in step across systems: products, inventory, and orders moving between supplier and retailer stores, Amazon, and the storefront, using the Admin APIs, webhooks, and Sidekiq jobs with retries.
-
-- **Shopify apps:** embedded apps with Polaris and App Bridge, Admin and Storefront REST and GraphQL APIs, webhooks, Shopify CLI, and App Store publishing and compliance
-- **Shopify Functions and checkout:** Functions (including Scripts-to-Functions migration for discounts, delivery, and payment customizations), Checkout UI Extensions, and Checkout Extensibility
-- **Themes:** Theme App Extensions and Liquid
-- **Shopify Plus:** checkout customization with Shopify checkout extensions, and Shopify Plus B2B features
-- **BigCommerce:** apps built on the Catalog, Orders, and Checkout APIs (REST and GraphQL), with webhooks and app store publishing
-- **Amazon SP-API:** product listings, variants, and image uploads, including an Amazon Import & Sync System that keeps listings in step between Amazon and e-commerce stores
-- **Production support:** led deployment, versioning, and updates to the app stores, and fixed issues across app code, DNS, and email delivery
-
-Apps published on the Shopify App Store, built as part of the MGLogics development team:
-
-- [MGLogics JSON-LD SEO Schema](https://apps.shopify.com/json-express-for-seo) (Shopify and BigCommerce): structured data for rich results and AI search. Rated 4.3/5 across 17 reviews.
-- **Express Sync: Order & Inventory** (Shopify and BigCommerce): real-time product, inventory, and order sync between supplier and retailer stores.
-- [MGLogics Express SEO & Schema](https://apps.shopify.com/express-seo): image optimization, JSON-LD, alt tags, redirects, and schema management.
-- [GeoLocation Traffic Redirect](https://apps.shopify.com/express-geo-redirect) (Shopify and BigCommerce): country-based redirects with pop-up and automatic options.
-- [Email Validator by MGLogics](https://apps.shopify.com/express-email-validator): detects fake or invalid emails on orders to prevent order scams.
-
-## AI engineering
-
-My AI work is application engineering: connecting models to the data and actions an existing app already has, and keeping the behavior predictable.
-
-- **MCP:** shop_mcp_server exposes tools and resources with validated arguments and approval-gated writes. ai_shop_assistant uses a custom MCP client against Shopify's Catalog API.
-- **RAG on the database you already have:** semantic product search with PostgreSQL, pgvector, and Voyage AI embeddings, with no separate vector database.
-- **Agents and assistants:** ai_shop_assistant uses RubyLLM and Gemini with tool calling against a live catalog. In product_geo_agent, the LLM judges and the scoring stays deterministic code, so results are repeatable and covered by evals. I also fixed Gemini tool-calling and agent-hook bugs in the little_ghost gem (see Open-source contributions).
-- **GEO and AEO:** product_geo_agent, plus JSON-LD structured data in the SEO apps, for making stores readable to AI assistants.
-
-## Experience
-
-- **MGLogics** (Dec 2021 to Jun 2026, remote): full-stack Rails and React engineer on Shopify and BigCommerce apps, catalog and order sync, and Amazon SP-API integrations. Worked daily with US clients.
-- **SimpleDeploy** (Apr 2019 to Dec 2021): backend engineer building Rails REST APIs on SQL and NoSQL databases, and management MVP tools for German clients.
-- **Education:** B.S. in Information Technology (Software), Sindh Agricultural University, 2012 to 2017.
-
-## FAQ
-
-**Can Ruby on Rails applications be connected to AI agents?**
-Yes. Give the agent a small set of narrow tools backed by your existing Rails code, validate every argument, and require approval for anything that writes. Keep decisions that must be repeatable in code, not in the model. [ai_shop_assistant](https://github.com/mjesar/ai_shop_assistant) uses RubyLLM and Gemini with tool calling against a live catalog, and in [product_geo_agent](https://github.com/mjesar/product_geo_agent) the LLM judges while the score stays deterministic.
-
-**How can RAG be added to an existing Rails application?**
-If the app already uses PostgreSQL, add pgvector for vector search, so there is no separate vector database to run. Generate embeddings, store them next to your records, and query by similarity. [shop_mcp_server](https://github.com/mjesar/shop_mcp_server) stores Voyage AI embeddings in pgvector for semantic product search.
-
-**How do you build an MCP server for a Rails application?**
-Define tools with validated arguments, mark which are read-only and which are destructive so clients gate writes behind approval, choose the right transport, and test from a real client. In shop_mcp_server I moved to the official MCP Ruby SDK after hitting an SSE vs. Streamable HTTP mismatch, and verified it in MCP Inspector and as a live Claude custom connector.
-
-**Can you build custom Shopify apps with Ruby on Rails?**
-Yes. Rails powered the Shopify apps I worked on: embedded apps with Polaris and App Bridge, the Admin and Storefront APIs, webhooks, and App Store publishing. Examples include order and inventory sync between supplier and retailer stores and JSON-LD structured data apps.
-
-**Can you build Shopify Plus integrations and checkout customizations?**
-Yes. My Shopify Plus work is checkout customization with Shopify checkout extensions and B2B features, plus Shopify Functions (including Scripts-to-Functions migration for discounts, delivery, and payment customizations).
-
-**Can Shopify stores be connected to external APIs and systems?**
-Yes. I use webhooks for changes, Sidekiq jobs with retries for the heavy work, and the Admin APIs for writes. That covers syncing products, inventory, and orders between supplier and retailer stores, and importing and syncing Amazon listings through SP-API.
-
-**How can AI be added to an e-commerce application?**
-Connect the model to the data and actions the store already has: an MCP server for products, orders, and inventory, semantic search with pgvector, and an assistant that answers from the live catalog instead of the model's memory. Writes stay behind approval, and repeatable logic stays in code.
-
-**How can an online store become discoverable to AI shopping assistants?**
-Make product pages easy for an AI to read and trust: complete product data, clear FAQ content, and schema.org structured data (JSON-LD). [product_geo_agent](https://github.com/mjesar/product_geo_agent) checks these and scores how discoverable a Shopify product is.
-
-## Contact
-
-Email: mohammadalijaisar@gmail.com
+More on my website: [projects](https://mjesar.github.io/projects/), [services and pricing](https://mjesar.github.io/services/), [resume](https://mjesar.github.io/resume/) and [writing](https://mjesar.github.io/writing/).
