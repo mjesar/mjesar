@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="assets/readme/banner.svg" alt="Mohammad Ali Jesar, senior Ruby on Rails engineer specializing in AI integration, with Shopify and e-commerce experience" width="100%">
+  <img src="assets/readme/banner.svg" alt="mjesar: Mohammad Ali Jesar, senior Ruby on Rails engineer specializing in AI integration, with Shopify and e-commerce experience" width="100%">
 </h1>
 
 <p align="center">
